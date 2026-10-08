@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>My Drive Music - V3</title>
+<title>My Drive Music - V4 Fast Stream</title>
 <style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0f1115;color:#eee;font-family:Arial,sans-serif;padding-bottom:118px}header{padding:16px 20px;background:#181b21;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5;border-bottom:1px solid #2a2e36}h1{margin:0;flex:1;font-size:20px}.btn{padding:9px 13px;border:0;border-radius:9px;font-weight:bold;cursor:pointer;background:#2b3039;color:#fff}.btn:hover{background:#3a414c}.primary{background:#fff;color:#111}.wrap{max-width:1100px;margin:auto;padding:18px}.status{color:#aab1bc;margin-bottom:14px}.tools{display:flex;gap:10px;margin-bottom:16px}.tools input{flex:1;min-width:0;background:#191d24;color:#fff;border:1px solid #333945;border-radius:9px;padding:11px 13px;outline:none}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.card{background:#191d24;padding:15px;border-radius:12px;cursor:pointer;border:1px solid transparent}.card:hover{background:#242932;border-color:#3a414c}.card.active{border-color:#fff}.name{font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{font-size:12px;color:#8f98a5;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player{position:fixed;bottom:0;left:0;right:0;background:#181b21;border-top:1px solid #30343c;padding:11px 18px;z-index:10}.now{font-weight:bold;margin-bottom:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.controls{display:flex;align-items:center;gap:8px;margin-bottom:7px}.controls .btn{padding:6px 10px}.mode{font-size:12px;color:#aab1bc;margin-left:auto}audio{width:100%;height:36px}@media(max-width:600px){header{padding:12px}.wrap{padding:12px}.grid{grid-template-columns:1fr}.player{padding:9px 10px}.mode{display:none}}
 </style>
@@ -60,7 +60,7 @@ async function loadFiles(){
  status('Reading Google Drive files...'); files=[]; let pageToken=''; let total=0;
  try{
   do{
-   const p=new URLSearchParams({pageSize:'1000',orderBy:'name',fields:'nextPageToken,files(id,name,mimeType,size,parents,webViewLink)',spaces:'drive',q:"trashed=false and mimeType!='application/vnd.google-apps.folder'",includeItemsFromAllDrives:'true',supportsAllDrives:'true'});
+   const p=new URLSearchParams({pageSize:'1000',orderBy:'name',fields:'nextPageToken,files(id,name,mimeType,size,parents,webViewLink,webContentLink)',spaces:'drive',q:"trashed=false and mimeType!='application/vnd.google-apps.folder'",includeItemsFromAllDrives:'true',supportsAllDrives:'true'});
    if(pageToken)p.set('pageToken',pageToken);
    const r=await fetch('https://www.googleapis.com/drive/v3/files?'+p.toString(),{headers:{Authorization:'Bearer '+token}});
    const text=await r.text();
@@ -98,24 +98,32 @@ function nextFile(){
  if(shuffle){if(files.length===1)return files[0];let n;do{n=Math.floor(Math.random()*files.length)}while(n===currentIndex);return files[n]}
  return files[(currentIndex+1)%files.length];
 }
-function prefetchNext(){
- const f=nextFile(); if(!f || blobCache.has(f.id) || prefetching.has(f.id) || !token)return;
- getBlob(f).then(()=>{}).catch(()=>{});
-}
+function prefetchNext(){ return nextFile(); }
 async function play(f){
  if(activeController)activeController.abort();
  activeController=new AbortController();
  status('Loading '+f.name+'...');document.getElementById('now').textContent=f.name;render();
  try{
-  const blob=await getBlob(f,activeController);
-  if(currentObjectUrl)URL.revokeObjectURL(currentObjectUrl);
-  currentObjectUrl=URL.createObjectURL(blob);audio.src=currentObjectUrl;await audio.play();
+  if(f.webContentLink){
+   if(currentObjectUrl){URL.revokeObjectURL(currentObjectUrl);currentObjectUrl=null}
+   audio.src=f.webContentLink; audio.load(); await audio.play();
+  }else{
+   const blob=await getBlob(f,activeController);
+   if(currentObjectUrl)URL.revokeObjectURL(currentObjectUrl);
+   currentObjectUrl=URL.createObjectURL(blob); audio.src=currentObjectUrl; await audio.play();
+  }
   status('Playing: '+f.name);
-  // Download the next song in the background so Next is much faster.
-  prefetchNext();
  }catch(e){
   if(e.name==='AbortError') return;
-  console.error(e);status('Could not play '+f.name+': '+e.message);
+  try{
+   const blob=await getBlob(f,activeController);
+   if(currentObjectUrl)URL.revokeObjectURL(currentObjectUrl);
+   currentObjectUrl=URL.createObjectURL(blob); audio.src=currentObjectUrl; await audio.play();
+   status('Playing: '+f.name);
+  }catch(e2){
+   if(e2.name==='AbortError') return;
+   console.error(e2); status('Could not play '+f.name+': '+e2.message);
+  }
  }
 }
 function playNext(){if(!files.length)return;if(activeController)activeController.abort();if(shuffle){let n;if(files.length===1)n=0;else{do{n=Math.floor(Math.random()*files.length)}while(n===currentIndex)}currentIndex=n}else{currentIndex=(currentIndex+1)%files.length}play(files[currentIndex])}
