@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>My Drive Music - V4 Fast Stream</title>
+<title>My Drive Music - V5</title>
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0f1115;color:#eee;font-family:Arial,sans-serif;padding-bottom:118px}header{padding:16px 20px;background:#181b21;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5;border-bottom:1px solid #2a2e36}h1{margin:0;flex:1;font-size:20px}.btn{padding:9px 13px;border:0;border-radius:9px;font-weight:bold;cursor:pointer;background:#2b3039;color:#fff}.btn:hover{background:#3a414c}.primary{background:#fff;color:#111}.wrap{max-width:1100px;margin:auto;padding:18px}.status{color:#aab1bc;margin-bottom:14px}.tools{display:flex;gap:10px;margin-bottom:16px}.tools input{flex:1;min-width:0;background:#191d24;color:#fff;border:1px solid #333945;border-radius:9px;padding:11px 13px;outline:none}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.card{background:#191d24;padding:15px;border-radius:12px;cursor:pointer;border:1px solid transparent}.card:hover{background:#242932;border-color:#3a414c}.card.active{border-color:#fff}.name{font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{font-size:12px;color:#8f98a5;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player{position:fixed;bottom:0;left:0;right:0;background:#181b21;border-top:1px solid #30343c;padding:11px 18px;z-index:10}.now{font-weight:bold;margin-bottom:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.controls{display:flex;align-items:center;gap:8px;margin-bottom:7px}.controls .btn{padding:6px 10px}.mode{font-size:12px;color:#aab1bc;margin-left:auto}audio{width:100%;height:36px}@media(max-width:600px){header{padding:12px}.wrap{padding:12px}.grid{grid-template-columns:1fr}.player{padding:9px 10px}.mode{display:none}}
+:root{color-scheme:dark;--bg:#0b0d10;--panel:#15181d;--panel2:#1b1f25;--line:#292e36;--text:#f5f7fa;--muted:#9aa3af;--accent:#fff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#242932 0,#0b0d10 42%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:178px}header{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;gap:12px}h1{margin:0;font-size:19px;letter-spacing:.2px;flex:1}.brand-dot{display:inline-flex;width:32px;height:32px;border-radius:10px;background:#fff;color:#111;align-items:center;justify-content:center;margin-right:8px}.btn{min-height:40px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;font-weight:700;cursor:pointer;background:var(--panel2);color:#fff}.btn:hover{background:#252a32}.primary{background:#fff;color:#111;border-color:#fff}.wrap{max-width:1120px;margin:auto;padding:22px 18px}.status{color:var(--muted);margin:0 0 16px}.tools{display:flex;gap:10px;margin-bottom:18px}.tools input{width:100%;background:var(--panel);color:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;outline:none;font-size:15px}.tools input:focus{border-color:#626b78}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px}.card{background:linear-gradient(145deg,#171b21,#12151a);padding:14px;border-radius:15px;cursor:pointer;border:1px solid var(--line);min-width:0;transition:.16s transform,.16s border-color,.16s background}.card:hover{transform:translateY(-2px);border-color:#4a515d}.card.active{border-color:#fff}.cover{height:150px;border-radius:11px;background:linear-gradient(135deg,#303640,#15181d);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px}.name{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{font-size:12px;color:var(--muted);margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player{position:fixed;bottom:0;left:0;right:0;background:rgba(17,20,25,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:12px 18px 14px;z-index:30}.player-inner{max-width:1120px;margin:auto}.nowrow{display:flex;align-items:center;gap:12px;margin-bottom:9px}.nowcover{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#3a414c,#1b1f25);display:flex;align-items:center;justify-content:center;font-size:21px;flex:0 0 auto}.now{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sub{font-size:12px;color:var(--muted);margin-top:2px}.controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px}.controls .btn{min-width:44px;padding:7px 10px}.controls .main{font-size:18px}.mode{font-size:11px;color:var(--muted);text-align:center;margin-bottom:7px}audio{width:100%;height:36px}#disconnect{color:#ffb4b4}@media(max-width:600px){header{padding:11px 12px}h1{font-size:17px}.brand-dot{width:30px;height:30px}.wrap{padding:16px 12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:10px;border-radius:13px}.cover{height:120px;font-size:38px}.name{font-size:14px}.meta{font-size:11px}.player{padding:9px 10px 11px}.nowcover{width:40px;height:40px}.controls{gap:6px}.mode{font-size:10px}.primary{padding:8px 10px}body{padding-bottom:175px}}
 </style>
 </head>
 <body>
 <header>
-<h1>🎵 My Drive Music</h1>
-<button class="btn primary" id="connect">Connect Google Drive</button>
-<button class="btn" id="refresh" hidden>↻ Refresh</button><button class="btn" id="disconnect" hidden>Disconnect</button>
+<h1><span class="brand-dot">♫</span>My Drive Music</h1>
+<button class="btn primary" id="connect">Connect Drive</button>
+<button class="btn" id="refresh" hidden>↻</button><button class="btn" id="disconnect" hidden>Disconnect</button>
 </header>
 <div class="wrap">
 <div class="status" id="status">Ready — connect your Google Drive.</div>
@@ -20,13 +20,15 @@
 <div id="library" class="grid"></div>
 </div>
 <div class="player">
-<div class="now" id="now">Nothing playing</div>
+<div class="player-inner">
+<div class="nowrow"><div class="nowcover">♫</div><div style="min-width:0"><div class="now" id="now">Nothing playing</div><div class="sub">Single click: Play/Pause · Double click: Next · Triple click: Previous</div></div></div>
 <div class="controls">
-<button class="btn" id="prev">⏮</button><button class="btn" id="next">⏭</button>
-<button class="btn" id="shuffle">🔀</button><button class="btn" id="repeat">🔁</button>
-<span class="mode" id="mode">Shuffle: Off · Repeat: Off</span>
+<button class="btn" id="prev" aria-label="Previous">⏮</button><button class="btn main" id="toggle" aria-label="Play or pause">▶</button><button class="btn" id="next" aria-label="Next">⏭</button>
+<button class="btn" id="shuffle" aria-label="Shuffle">🔀</button><button class="btn" id="repeat" aria-label="Repeat">🔁</button>
 </div>
+<div class="mode" id="mode">Shuffle: Off · Repeat: Off</div>
 <audio id="audio" controls preload="metadata"></audio>
+</div>
 </div>
 
 <script src="https://accounts.google.com/gsi/client"></script>
@@ -38,7 +40,7 @@ let token=null,tokenClient,files=[],visibleFiles=[],currentIndex=-1,shuffle=fals
 let activeController=null;
 const blobCache=new Map();
 const prefetching=new Map();
-const statusEl=document.getElementById('status'),library=document.getElementById('library'),audio=document.getElementById('audio'),search=document.getElementById('search');
+const statusEl=document.getElementById('status'),library=document.getElementById('library'),audio=document.getElementById('audio'),search=document.getElementById('search'),toggleBtn=document.getElementById('toggle');
 function status(x){statusEl.textContent=x}
 function formatSize(bytes){if(!bytes)return '';const n=Number(bytes);if(n<1048576)return Math.round(n/1024)+' KB';if(n<1073741824)return (n/1048576).toFixed(1)+' MB';return (n/1073741824).toFixed(2)+' GB'}
 function extension(name){const m=name.match(/\.([^.]+)$/);return m?m[1].toUpperCase():'AUDIO'}
@@ -49,7 +51,7 @@ function render(){
  if(!visibleFiles.length){status(files.length?'No matching music.':'No audio files found in Drive.');return}
  status(visibleFiles.length+' music file(s) shown · '+files.length+' total');
  visibleFiles.forEach((f,i)=>{const c=document.createElement('div');c.className='card';if(files[currentIndex]?.id===f.id)c.classList.add('active');
- c.innerHTML='<div class="name"></div><div class="meta"></div>';c.querySelector('.name').textContent=f.name;c.querySelector('.meta').textContent=extension(f.name)+(f.size?' · '+formatSize(f.size):'');c.onclick=()=>playFileByVisibleIndex(i);library.appendChild(c)});
+ c.innerHTML='<div class="cover">♫</div><div class="name"></div><div class="meta"></div>';c.querySelector('.name').textContent=f.name;c.querySelector('.meta').textContent=extension(f.name)+(f.size?' · '+formatSize(f.size):'');c.onclick=()=>playFileByVisibleIndex(i);library.appendChild(c)});
 }
 function playFileByVisibleIndex(i){const f=visibleFiles[i];currentIndex=files.findIndex(x=>x.id===f.id);play(f)}
 function init(){tokenClient=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPES,callback:async r=>{if(r.error){status('Google authorization failed: '+r.error);return}token=r.access_token;document.getElementById('connect').hidden=true;document.getElementById('disconnect').hidden=false;document.getElementById('refresh').hidden=false;document.getElementById('tools').hidden=false;await loadFiles()}})}
@@ -112,7 +114,7 @@ async function play(f){
    if(currentObjectUrl)URL.revokeObjectURL(currentObjectUrl);
    currentObjectUrl=URL.createObjectURL(blob); audio.src=currentObjectUrl; await audio.play();
   }
-  status('Playing: '+f.name);
+  status('Playing: '+f.name); updateMediaSession(f); updateMediaSession(f);
  }catch(e){
   if(e.name==='AbortError') return;
   try{
@@ -131,8 +133,29 @@ function playPrev(){if(!files.length)return;if(activeController)activeController
 document.getElementById('next').onclick=playNext;document.getElementById('prev').onclick=playPrev;
 document.getElementById('shuffle').onclick=()=>{shuffle=!shuffle;updateMode()};document.getElementById('repeat').onclick=()=>{repeat=!repeat;updateMode()};
 function updateMode(){document.getElementById('mode').textContent='Shuffle: '+(shuffle?'On':'Off')+' · Repeat: '+(repeat?'On':'Off')}
+function updatePlayButton(){toggleBtn.textContent=audio.paused?'▶':'❚❚'}
+toggleBtn.onclick=()=>{if(audio.paused){audio.play().catch(()=>{});}else audio.pause()};
+audio.addEventListener('play',updatePlayButton);audio.addEventListener('pause',updatePlayButton);
+function setupMediaSession(){
+ if(!('mediaSession' in navigator)) return;
+ const handlers={
+  play:()=>audio.play().catch(()=>{}),
+  pause:()=>audio.pause(),
+  nexttrack:()=>playNext(),
+  previoustrack:()=>playPrev(),
+  seekbackward:()=>{audio.currentTime=Math.max(0,audio.currentTime-10)},
+  seekforward:()=>{audio.currentTime=Math.min(audio.duration||Infinity,audio.currentTime+10)}
+ };
+ for(const [action,fn] of Object.entries(handlers)){try{navigator.mediaSession.setActionHandler(action,fn)}catch(e){}}
+}
+function updateMediaSession(f){
+ if(!('mediaSession' in navigator)||!f) return;
+ try{navigator.mediaSession.metadata=new MediaMetadata({title:f.name,artist:'My Drive Music',album:'Google Drive'});navigator.mediaSession.playbackState=audio.paused?'paused':'playing'}catch(e){}
+}
+audio.addEventListener('play',()=>{if('mediaSession' in navigator)navigator.mediaSession.playbackState='playing'});
+audio.addEventListener('pause',()=>{if('mediaSession' in navigator)navigator.mediaSession.playbackState='paused'});
 audio.addEventListener('ended',()=>{if(repeat&&currentIndex>=0)play(files[currentIndex]);else playNext()});
-search.addEventListener('input',render);window.addEventListener('load',init);
+search.addEventListener('input',render);window.addEventListener('load',()=>{init();setupMediaSession()});
 </script>
 </body>
 </html>
