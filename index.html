@@ -5,23 +5,24 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>My Drive Music - V6 Albums</title>
 <style>
-:root{color-scheme:dark;--bg:#0b0d10;--panel:#15181d;--panel2:#1b1f25;--line:#292e36;--text:#f5f7fa;--muted:#9aa3af;--accent:#fff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#242932 0,#0b0d10 42%);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:178px}header{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;gap:12px}h1{margin:0;font-size:19px;letter-spacing:.2px;flex:1}.brand-dot{display:inline-flex;width:32px;height:32px;border-radius:10px;background:#fff;color:#111;align-items:center;justify-content:center;margin-right:8px}.btn{min-height:40px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;font-weight:700;cursor:pointer;background:var(--panel2);color:#fff}.btn:hover{background:#252a32}.primary{background:#fff;color:#111;border-color:#fff}.wrap{max-width:1120px;margin:auto;padding:22px 18px}.status{color:var(--muted);margin:0 0 16px}.tools{display:flex;gap:10px;margin-bottom:18px}.tools input{width:100%;background:var(--panel);color:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;outline:none;font-size:15px}.tools input:focus{border-color:#626b78}.album-section{grid-column:1/-1;margin:8px 0 2px}.album-heading{display:flex;align-items:baseline;gap:9px;border-bottom:1px solid var(--line);padding:0 2px 9px;margin-bottom:11px}.album-title{font-size:16px;font-weight:800}.album-count{font-size:12px;color:var(--muted)}.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px}.grid{display:grid;grid-template-columns:1fr;gap:16px}.card{background:linear-gradient(145deg,#171b21,#12151a);padding:14px;border-radius:15px;cursor:pointer;border:1px solid var(--line);min-width:0;transition:.16s transform,.16s border-color,.16s background}.card:hover{transform:translateY(-2px);border-color:#4a515d}.card.active{border-color:#fff}.cover{height:150px;border-radius:11px;background:linear-gradient(135deg,#303640,#15181d);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:12px}.name{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{font-size:12px;color:var(--muted);margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player{position:fixed;bottom:0;left:0;right:0;background:rgba(17,20,25,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:12px 18px 14px;z-index:30}.player-inner{max-width:1120px;margin:auto}.nowrow{display:flex;align-items:center;gap:12px;margin-bottom:9px}.nowcover{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#3a414c,#1b1f25);display:flex;align-items:center;justify-content:center;font-size:21px;flex:0 0 auto}.now{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sub{font-size:12px;color:var(--muted);margin-top:2px}.controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px}.controls .btn{min-width:44px;padding:7px 10px}.controls .main{font-size:18px}.mode{font-size:11px;color:var(--muted);text-align:center;margin-bottom:7px}audio{width:100%;height:36px}#disconnect{color:#ffb4b4}@media(max-width:600px){header{padding:11px 12px}h1{font-size:17px}.brand-dot{width:30px;height:30px}.wrap{padding:16px 12px}.album-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{padding:10px;border-radius:13px}.cover{height:120px;font-size:38px}.name{font-size:14px}.meta{font-size:11px}.player{padding:9px 10px 11px}.nowcover{width:40px;height:40px}.controls{gap:6px}.mode{font-size:10px}.primary{padding:8px 10px}body{padding-bottom:175px}}
+:root{color-scheme:light;--bg:#f2f2f7;--panel:#fff;--panel2:#f7f7fa;--line:#d9d9df;--text:#222329;--muted:#85858e;--accent:#f0c93e;--accent2:#fff3b8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:150px}header{position:sticky;top:0;z-index:20;background:rgba(243,243,248,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 16px 8px}.topline{display:flex;align-items:center;gap:10px;min-height:46px}.brand-dot{display:inline-flex;width:38px;height:38px;border-radius:50%;background:#5a5a60;color:white;align-items:center;justify-content:center;font-size:20px}.brand-title{font-weight:750;font-size:17px;flex:1}.btn{min-height:40px;padding:8px 12px;border:1px solid #dedee4;border-radius:11px;font-weight:650;cursor:pointer;background:#fff;color:#333}.btn:hover{background:#f8f8fb}.primary{background:#f1cc43;color:#282414;border-color:#e7c33d}.navicons{display:flex;justify-content:space-around;align-items:center;padding:7px 0 10px;color:#888892;font-size:24px}.navicons span{width:42px;height:36px;display:flex;align-items:center;justify-content:center}.navicons .selected{color:#e5b91d}.tabs{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;background:#fff;margin:0 -16px;padding:0 12px;border-bottom:1px solid var(--line)}.tabs button{border:0;background:transparent;color:#777780;padding:12px 18px;font-size:15px;white-space:nowrap;border-bottom:3px solid transparent}.tabs button.active{color:#222;border-bottom-color:#eac536;font-weight:700}.wrap{max-width:1120px;margin:auto;padding:16px 16px}.status{color:var(--muted);margin:0 0 12px;font-size:13px}.tools{display:flex;gap:10px;margin-bottom:12px}.tools input{width:100%;background:#fff;color:#222;border:1px solid #dedee5;border-radius:12px;padding:12px 14px;outline:none;font-size:15px}.tools input:focus{border-color:#d8b72d}.summary{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);margin-bottom:6px}.shuffle-play{border:1px solid #e9c638;color:#d4aa12;background:transparent;width:42px;height:42px;border-radius:50%;font-size:20px}.summary-text{font-size:14px;flex:1}.summary-text span{color:var(--muted)}.album-section{margin:10px 0 20px}.album-heading{display:flex;align-items:baseline;gap:9px;border-bottom:1px solid var(--line);padding:0 2px 8px;margin-bottom:2px}.album-title{font-size:16px;font-weight:800}.album-count{font-size:12px;color:var(--muted)}.album-grid{display:flex;flex-direction:column;gap:0}.grid{display:block}.card{display:flex;align-items:center;gap:14px;background:transparent;padding:12px 2px;border:0;border-bottom:1px solid var(--line);border-radius:0;cursor:pointer;min-width:0;transition:background .12s}.card:hover{background:rgba(255,255,255,.55)}.card.active{background:var(--accent2)}.cover{width:78px;height:78px;flex:0 0 78px;border-radius:2px;background:linear-gradient(135deg,#e6e6e9,#c9c9ce);display:flex;align-items:center;justify-content:center;font-size:31px;color:#888;margin:0}.song-info{min-width:0;flex:1}.name{font-weight:500;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{font-size:13px;color:var(--muted);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row-more{font-size:24px;color:#777;margin:0 4px}.player{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:9px 12px max(10px,env(safe-area-inset-bottom));z-index:30}.player-inner{max-width:1120px;margin:auto}.nowrow{display:flex;align-items:center;gap:10px;margin-bottom:7px}.nowcover{width:44px;height:44px;border-radius:2px;background:#d5d5d9;display:flex;align-items:center;justify-content:center;font-size:22px;color:#85858c;flex:0 0 auto}.now{font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14px}.sub{font-size:12px;color:var(--muted);margin-top:2px}.controls{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:3px}.controls .btn{min-width:42px;border:0;background:transparent;font-size:21px;padding:4px 9px}.controls .main{font-size:25px;border:1px solid #d9d9df;border-radius:50%;width:50px;height:50px}.mode{font-size:10px;color:var(--muted);text-align:center;margin-bottom:4px}audio{width:100%;height:27px}#disconnect{color:#a53c3c}@media(min-width:700px){.album-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}.card{display:block;background:#fff;padding:12px;border:1px solid var(--line);border-radius:10px}.cover{width:100%;height:auto;aspect-ratio:1;margin-bottom:10px}.row-more{display:none}.player{padding-left:20px;padding-right:20px}}@media(max-width:600px){header{padding:9px 12px 0}.brand-title{font-size:16px}.wrap{padding:12px}.cover{width:78px;height:78px;flex-basis:78px}.name{font-size:15px}.meta{font-size:12px}.player{padding-left:10px;padding-right:10px}.controls{position:absolute;right:10px;top:12px;gap:4px}.controls .btn{min-width:35px;padding:4px 6px}.controls .main{width:46px;height:46px}.nowrow{padding-right:145px;min-height:48px}audio{height:24px}.mode{display:none}.summary{padding:10px 2px}.album-heading{margin-top:14px}}
 </style>
 </head>
 <body>
 <header>
-<h1><span class="brand-dot">♫</span>My Drive Music</h1>
-<button class="btn primary" id="connect">Connect Drive</button>
-<button class="btn" id="refresh" hidden>↻</button><button class="btn" id="disconnect" hidden>Disconnect</button>
+<div class="topline"><span class="brand-dot">●</span><div class="brand-title">My Drive Music</div><button class="btn primary" id="connect">Connect Drive</button><button class="btn" id="refresh" hidden>↻</button><button class="btn" id="disconnect" hidden>Disconnect</button></div>
+<div class="navicons"><span>♟</span><span class="selected">♫</span><span>☷</span><span>☁</span><span>◎</span><span id="searchIcon">⌕</span></div>
+<div class="tabs" id="viewTabs"><button data-view="title">Title</button><button data-view="folder">Folder</button><button class="active" data-view="album">Album</button><button data-view="artist">Artist</button></div>
 </header>
 <div class="wrap">
 <div class="status" id="status">Ready — connect your Google Drive.</div>
-<div class="tools" id="tools" hidden><input id="search" placeholder="Search songs..."></div>
+<div class="tools" id="tools" hidden><input id="search" placeholder="Search songs, albums, folders..."></div>
+<div class="summary" id="summary" hidden><button class="shuffle-play" id="shuffleAll">▶</button><div class="summary-text">Shuffle all <span id="totalCount">/ Total 0</span></div><button class="btn" id="listMode" aria-label="View options">☷</button></div>
 <div id="library" class="grid"></div>
 </div>
 <div class="player">
 <div class="player-inner">
-<div class="nowrow"><div class="nowcover">♫</div><div style="min-width:0"><div class="now" id="now">Nothing playing</div><div class="sub">Headphones: Play/Pause · Next/Previous depend on headset & browser support</div></div></div>
+<div class="nowrow"><div class="nowcover">♫</div><div style="min-width:0;flex:1"><div class="now" id="now">Nothing playing</div><div class="sub">My Drive Music</div></div></div>
 <div class="controls">
 <button class="btn" id="prev" aria-label="Previous">⏮</button><button class="btn main" id="toggle" aria-label="Play or pause">▶</button><button class="btn" id="next" aria-label="Next">⏭</button>
 <button class="btn" id="shuffle" aria-label="Shuffle">🔀</button><button class="btn" id="repeat" aria-label="Repeat">🔁</button>
@@ -36,7 +37,7 @@
 const CLIENT_ID="47016789140-ro981mmscma2m2mm89agnnojddfk00lv.apps.googleusercontent.com";
 const SCOPES="https://www.googleapis.com/auth/drive.readonly";
 const AUDIO_EXT=/\.(mp3|flac|m4a|mp4|ogg|oga|wav|aac|opus)$/i;
-let token=null,tokenClient,files=[],visibleFiles=[],currentIndex=-1,shuffle=false,repeat=false,currentObjectUrl=null,folderNames=new Map();
+let token=null,tokenClient,files=[],visibleFiles=[],currentIndex=-1,shuffle=false,repeat=false,currentObjectUrl=null,folderNames=new Map(),viewMode='album';
 let activeController=null;
 const blobCache=new Map();
 const prefetching=new Map();
@@ -48,31 +49,37 @@ function render(){
  const term=search.value.trim().toLowerCase();
  visibleFiles=files.filter(f=>!term||f.name.toLowerCase().includes(term)||albumFor(f).toLowerCase().includes(term));
  library.innerHTML='';
+ document.getElementById('totalCount').textContent='/ Total '+files.length;
  if(!visibleFiles.length){status(files.length?'No matching music.':'No audio files found in Drive.');return}
- status(visibleFiles.length+' song(s) in '+new Set(visibleFiles.map(albumFor)).size+' album/folder(s) · '+files.length+' total');
+ status(visibleFiles.length+' songs · '+new Set(visibleFiles.map(albumFor)).size+' albums/folders');
  const groups=new Map();
- visibleFiles.forEach(f=>{const album=albumFor(f);if(!groups.has(album))groups.set(album,[]);groups.get(album).push(f)});
- for(const [album,songs] of groups){
+ if(viewMode==='title') groups.set('All Songs',visibleFiles);
+ else if(viewMode==='artist') groups.set('Artist information unavailable',visibleFiles);
+ else visibleFiles.forEach(f=>{const key=albumFor(f);if(!groups.has(key))groups.set(key,[]);groups.get(key).push(f)});
+ for(const [groupName,songs] of groups){
   const section=document.createElement('section');section.className='album-section';
-  const heading=document.createElement('div');heading.className='album-heading';
-  const title=document.createElement('div');title.className='album-title';title.textContent=album;
-  const count=document.createElement('div');count.className='album-count';count.textContent=songs.length+' song'+(songs.length===1?'':'s');
-  heading.append(title,count);section.appendChild(heading);
+  if(viewMode!=='title'){
+   const heading=document.createElement('div');heading.className='album-heading';
+   const title=document.createElement('div');title.className='album-title';title.textContent=groupName;
+   const count=document.createElement('div');count.className='album-count';count.textContent=songs.length+' song'+(songs.length===1?'':'s');
+   heading.append(title,count);section.appendChild(heading);
+  }
   const grid=document.createElement('div');grid.className='album-grid';
   songs.forEach(f=>{const c=document.createElement('div');c.className='card';if(files[currentIndex]?.id===f.id)c.classList.add('active');
-   c.innerHTML='<div class="cover">♫</div><div class="name"></div><div class="meta"></div>';c.querySelector('.name').textContent=f.name.replace(/\.[^.]+$/,'');c.querySelector('.meta').textContent=extension(f.name)+(f.size?' · '+formatSize(f.size):'');c.onclick=()=>{currentIndex=files.findIndex(x=>x.id===f.id);play(f)};grid.appendChild(c)});
+   c.innerHTML='<div class="cover">♫</div><div class="song-info"><div class="name"></div><div class="meta"></div></div><div class="row-more">⌄</div>';c.querySelector('.name').textContent=f.name.replace(/\.[^.]+$/,'');c.querySelector('.meta').textContent=(viewMode==='artist'?'Unknown artist · ':'')+extension(f.name)+(f.size?' · '+formatSize(f.size):'');c.onclick=()=>{currentIndex=files.findIndex(x=>x.id===f.id);play(f)};grid.appendChild(c)});
   section.appendChild(grid);library.appendChild(section);
  }
 }
+
 function albumFor(f){
  const parent=(f.parents&&f.parents.length)?f.parents[0]:null;
  return (parent&&folderNames.get(parent))||'All Music';
 }
 function playFileByVisibleIndex(i){const f=visibleFiles[i];currentIndex=files.findIndex(x=>x.id===f.id);play(f)}
-function init(){tokenClient=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPES,callback:async r=>{if(r.error){status('Google authorization failed: '+r.error);return}token=r.access_token;document.getElementById('connect').hidden=true;document.getElementById('disconnect').hidden=false;document.getElementById('refresh').hidden=false;document.getElementById('tools').hidden=false;await loadFiles()}})}
+function init(){tokenClient=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPES,callback:async r=>{if(r.error){status('Google authorization failed: '+r.error);return}token=r.access_token;document.getElementById('connect').hidden=true;document.getElementById('disconnect').hidden=false;document.getElementById('refresh').hidden=false;document.getElementById('tools').hidden=false;document.getElementById('summary').hidden=false;await loadFiles()}})}
 document.getElementById('connect').onclick=()=>tokenClient.requestAccessToken({prompt:'consent'});
 document.getElementById('refresh').onclick=()=>{if(token)loadFiles()};
-document.getElementById('disconnect').onclick=()=>{if(activeController)activeController.abort();if(token)google.accounts.oauth2.revoke(token);token=null;files=[];visibleFiles=[];currentIndex=-1;blobCache.clear();prefetching.clear();library.innerHTML='';document.getElementById('tools').hidden=true;audio.removeAttribute('src');audio.load();document.getElementById('connect').hidden=false;document.getElementById('refresh').hidden=true;document.getElementById('disconnect').hidden=true;status('Disconnected.')};
+document.getElementById('disconnect').onclick=()=>{if(activeController)activeController.abort();if(token)google.accounts.oauth2.revoke(token);token=null;files=[];visibleFiles=[];currentIndex=-1;blobCache.clear();prefetching.clear();library.innerHTML='';document.getElementById('tools').hidden=true;document.getElementById('summary').hidden=true;audio.removeAttribute('src');audio.load();document.getElementById('connect').hidden=false;document.getElementById('refresh').hidden=true;document.getElementById('disconnect').hidden=true;status('Disconnected.')};
 async function loadFiles(){
  status('Reading Google Drive files and album folders...'); files=[]; folderNames.clear(); let pageToken=''; let total=0;
  try{
@@ -179,7 +186,7 @@ audio.addEventListener('play',()=>{if('mediaSession' in navigator)navigator.medi
 audio.addEventListener('pause',()=>{if('mediaSession' in navigator)navigator.mediaSession.playbackState='paused'});
 audio.addEventListener('loadedmetadata',()=>{const f=files[currentIndex];if(f)updateMediaSession(f)});
 audio.addEventListener('ended',()=>{if(repeat&&currentIndex>=0)play(files[currentIndex]);else playNext()});
-search.addEventListener('input',render);window.addEventListener('load',()=>{init();setupMediaSession()});
+search.addEventListener('input',render);document.querySelectorAll('#viewTabs button').forEach(b=>b.addEventListener('click',()=>{viewMode=b.dataset.view;document.querySelectorAll('#viewTabs button').forEach(x=>x.classList.toggle('active',x===b));render()}));document.getElementById('searchIcon').onclick=()=>{document.getElementById('tools').hidden=!document.getElementById('tools').hidden;if(!document.getElementById('tools').hidden)search.focus()};document.getElementById('shuffleAll').onclick=()=>{shuffle=true;updateMode();playNext()};document.getElementById('listMode').onclick=()=>{viewMode=viewMode==='album'?'title':'album';document.querySelectorAll('#viewTabs button').forEach(x=>x.classList.toggle('active',x.dataset.view===viewMode));render()};window.addEventListener('load',()=>{init();setupMediaSession()});
 </script>
 </body>
 </html>
